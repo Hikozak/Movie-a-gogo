@@ -1,0 +1,71 @@
+<h1>MOVIE-A-GOGO</h1>
+<div class="container">
+<form (ngSubmit)="onSubmit(reg)" #reg="ngForm">
+<div>
+  <div>
+  <label> Movie Code </label>
+  <input type="text" ngModel name="code" #studno="ngModel" required pattern="[0-9]+">
+  </div>
+  
+  <div>
+  <label> Movie Title </label>
+  <input type="text" ngModel name="title" #studfname="ngModel" required pattern="[A-z\s]+"><br>
+  </div>
+
+  <div>
+  <label> Genre </label>
+  <select id = "genre">
+    <option value = "horror">Horror</option>
+    <option value = "scifi">Sci-fi</option>
+    <option value = "comedy">Comedy</option>
+    <option value = "romance">Romance</option>
+    <option value = "Action">Action</option>
+  </select>
+  </div>
+
+  <div>
+  <label> Year </label>
+  <input type="text" ngModel name="year" #studprog="ngModel" required pattern="[0-9]+"><br>
+  </div>
+
+  <div>
+  <label> Cast </label>
+  <input type="text" ngModel name="cast" #studyr="ngModel" required pattern="[A-z\s]+"><br>
+  </div>
+</div>
+
+<div id = 'options'>
+  <app-add-movie></app-add-movie>
+  <app-list-movie></app-list-movie>
+  <app-update-movie></app-update-movie>
+  <app-delete-movie></app-delete-movie>
+</div>
+
+</form>
+</div>
+
+<div *ngIf = 'printing'>
+  <table>
+    <thead>
+      <tr>
+        <th>Movie Code</th>
+        <th>Movie Title</th>
+        <th>Genre</th>
+        <th>Year</th>
+        <th>Cast</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor = 'let movies of movieCollection'>
+        <td>{{ movies.movieCode }}</td>
+        <td>{{ movies.movieTitle }}</td>
+        <td>{{ movies.movieGenre }}</td>
+        <td>{{ movies.movieYear }}</td>
+        <td>{{ movies.movieCast }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+

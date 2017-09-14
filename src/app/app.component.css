@@ -1,0 +1,18 @@
+label{
+    display: inline-block;
+    width: 170px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12pt;
+    margin: 5px;
+    padding-left: 5px;
+    color: green;
+}
+
+div#options{
+    margin: 5px;
+}
+
+h1{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
